@@ -1,0 +1,49 @@
+{% extends 'home/base.html' %}
+{% block page_content %}
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<table>
+  <tr>
+    <th style="text-align:right;">HAPUS INSTANSI</th>
+  </tr>
+
+  <tr>
+    <td>Anda yakin untuk menghapus Rumah Sakit Sehat ?</td>
+    <td>
+        <type="button" class="btn btn-primary">Ya</button>
+    </td>
+
+    <td>
+        <a href="{% url 'adminsatgas:masterInstansi'%}" type="button" class="btn btn-primary">Tidak</button></td>
+    </td>    
+  </tr>
+
+  <table>
+
+</body>
+</html>
+{% endblock %}

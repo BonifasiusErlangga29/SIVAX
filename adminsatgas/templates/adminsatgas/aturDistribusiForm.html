@@ -1,0 +1,64 @@
+{% extends 'home/base.html'%}
+
+{% block page_content %}
+
+<form action="{% url 'adminsatgas:aturDistribusiForm' %}" method="POST">
+    <h1>Form Atur Distribusi</h1>
+
+    {% csrf_token %}
+    <h2>Informasi Penjadwalan:</h2>
+        <div class="form-group">
+            <label>Nama Instansi:</label>
+            <input type="text" id="disabledTextInput" class="form-control" value= "Rumah Sakit Sehat" disabled>
+          </div>
+          <div class="form-group">
+            <label>Tanggal dan Waktu Pelaksanaan:</label>
+            <input type="text" id="disabledTextInput" class="form-control" value= "18 Juni 2021 13:38" disabled>
+          </div>
+          <div class="form-group">
+            <label>Kuota:</label>
+            <input type="text" id="disabledTextInput" class="form-control" value= "651" disabled>
+          </div>
+          <div class="form-group">
+            <label>Kategori Penerima:</label>
+            <input type="text" id="disabledTextInput" class="form-control" value= "umum" disabled>
+          </div>
+          <div class="form-group">
+            <label>Lokasi Vaksin:</label>
+            <input type="text" id="disabledTextInput" class="form-control" value= "Rosemary Hospital Center" disabled>
+          </div>
+          <div class="form-group">
+            <label>Status:</label>
+            <input type="text" id="disabledTextInput" class="form-control" value= "Pengajuan Dikirim" disabled>
+          </div>
+          <div class="form-group">
+            <label>Jumlah Tenaga Kesehatan:</label>
+            <input type="text" id="disabledTextInput" class="form-control" value= "1" disabled>
+          </div>
+          <div class="form-group">
+            <label>Diverifikasi oleh:</label>
+            <input type="text" id="disabledTextInput" class="form-control" value= "Sharyl.Pelosi@gmail.com" disabled>
+          </div>
+        
+        <h2>Informasi Distribusi: </h2>
+        <p>Kode: </p>
+        <div class="mb-3">
+            <label>Tanggal Distribusi</label>
+            {{ form.tanggalDanWaktuDistribusi }}
+        </div>
+        <div class="mb-3">
+            <label>Biaya Distribusi</label>
+            {{ form.biayaDistribusi }}
+        </div>
+        <div class="mb-3">
+            <label>Jenis Vaksin</label>
+            {{ form.jenisVaksin }}
+        </div>
+        <div class="mb-3">
+            <label>Jumlah Vaksin</label>
+            {{ form.jumlahVaksin }}
+        </div>
+
+        <button type="submit" class="btn btn-primary">SIMPAN DISTRIBUSI</button>
+
+{% endblock %}

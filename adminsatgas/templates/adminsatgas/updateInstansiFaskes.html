@@ -1,0 +1,60 @@
+{% extends 'home/base.html' %}
+{% block page_content %}
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center;">FORM UPDATE INSTANSI</h2>
+
+<form>
+    <p>Kode: {{ kode_instansi }}</p>
+    <div class="form-group">
+      <label>Nama Instansi</label>
+      <input type="text" id="disabledTextInput" class="form-control" value= "Rumah Sakit Sehat" disabled>
+  </div>
+
+    <div class="form-group">
+      <label>No Telp</label>
+      <input type="text" id="disabledTextInput" class="form-control" value= "12345" disabled>
+  </div>
+
+    <div class="form-group">
+        <label>Kategori Instansi</label>
+        {{ form2.kategoriInstansi }}
+    </div>
+
+    <div class="form-group">
+        <label>Kategori Tipe Faskes</label>
+        {{ form2.kategoriTipeFaskes }}
+    </div>
+
+    <div class="form-group">
+        <label>Status Kepemilikan</label>
+        {{ form2.kategoriStatusKepemilikan }}
+    </div>
+    
+    <a href="{% url 'adminsatgas:masterInstansi'%}" button type="submit" class="btn btn-primary">Update</button>
+</form>
+{% endblock %}

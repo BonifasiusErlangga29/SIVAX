@@ -1,0 +1,22 @@
+{% extends 'home/base.html' %}
+{% block page_content %}
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h2 style="text-align:center;">DETAIL JADWAL</h2>
+
+<p> Nama Instansi:  {{ datas.0 }}</p>
+<p> Tanggal dan Waktu Pelaksanaan:  {{ datas.1 }}</p>
+<p> Kuota:  {{ datas.2 }}</p>
+<p> Kategori Penerima:  {{ datas.3 }}</p>
+<p> Lokasi Vaksin:  {{ datas.4 }}</p>
+<p> Nomor Tiket:  {{ datas.5 }}</p>
+<p> Status Tiket:  {{ datas.6 }}</p><br>
+<a href="{% url 'pengguna:tiketSaya'%}"  type="button" class="btn btn-primary">Cancel</a>
+
+
+</body>
+</html>
+{% endblock %}

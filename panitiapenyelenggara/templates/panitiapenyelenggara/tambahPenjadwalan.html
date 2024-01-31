@@ -1,0 +1,31 @@
+{% extends 'home/base.html'%}
+
+{% block page_content %}
+
+<form action="{% url 'panitiapenyelenggara:tambahPenjadwalanBaru' %}" method="POST">
+    <h1>Tambah Penjadwalan Baru</h1>
+
+    {% csrf_token %}
+    <div class="mb-3">
+        <label>Nama Instansi</label>
+          {{ form.namaInstansi }}
+      </div>
+      <div class="mb-3">
+        <label>Tanggal dan Waktu</label>
+          {{ form.tanggalDanWaktu }}
+      </div>
+      <div class="mb-3">
+          <label>Kuota</label>
+            {{ form.kuota }}
+      </div>
+      <div class="mb-3">
+          <label>Penerima</label>
+            {{ form.penerima }}
+        </div>
+        <div class="mb-3">
+          <label>Lokasi Vaksin</label>
+            {{ form.lokasiVaksin }}
+        </div>
+        <button type="submit" class="btn btn-primary">BUAT JADWAL</button>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'home/base.html' %}
+{% block page_content %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2 style="text-align: center;">TIKET SAYA</h2>
+
+<table>
+  <tr>
+    <th>No</th>
+    <th>Nomor Tiket</th>
+    <th>Instansi Penyelenggara</th>
+    <th>Waktu Pelaksanaan</th>
+    <th>Status Tiket</th>
+    <th>Action</th>
+  </tr>
+  {% for data in datas %}
+  <tr>
+    <td>{{forloop.counter}}</td>
+    <td>{{data.no_tiket}}</td>
+    <td>{{data.nama_instansi}}</td>
+    <td>{{data.tgl_waktu}}</td>
+    <td>{{data.nama_status}}</td>
+    <td><a href="{% url 'pengguna:jadwalListTiket' data.kode_instansi data.tgl_waktu %}"  type="button" class="btn btn-primary">Detail</a></td>
+  </tr>
+  {% endfor %}
+ 
+</table>
+
+</body>
+</html>
+{% endblock %}
+

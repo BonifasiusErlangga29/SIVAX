@@ -1,0 +1,27 @@
+{% extends 'home/base.html'%}
+
+{% block page_content %}
+
+
+<div class="card">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs" >
+      <li class="nav-item">
+          <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Role
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="{% url 'home:registerAdminSatgas' %}">Admin Satgas</a>
+                  <a class="dropdown-item" href="{% url 'home:registerPanitiaPenyelenggara' %}">Panitia Penylenggara</a>
+                  <a class="dropdown-item" href="{% url 'home:registerWarga' %}">Warga</a>
+                  <!-- <a class="dropdown-item" href="{% url 'adminsatgas:updateStokVaksin' %}">Update Stok Vaksin</a> -->
+              </div>
+          </div>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+{% endblock %}

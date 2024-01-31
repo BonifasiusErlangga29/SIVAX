@@ -1,0 +1,34 @@
+{% extends 'home/base.html' %}
+{% block page_content %}
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2 style="text-align:center;">JADWAL VAKSIN</h2>
+
+<form>
+    {% csrf_token %}
+    <div class="form-group">
+        <label>Nama Instansi</label>
+        <input type="text" id="disabledTextInput" class="form-control" value= "PT Bintang Pratama" disabled>
+    </div>
+    <div class="form-group">
+        <label for="disabledTextInput">Tanggal dan Waktu Pelaksanaan</label>
+        <input type="text" id="disabledTextInput" class="form-control" value= "18 November 2021 10:00" disabled>
+    </div>
+    <div class="form-group">
+        <label>Kuota</label>
+        <input type="text" id="disabledTextInput" class="form-control" value= "300" disabled>
+    </div>
+    <div class="form-group">
+        <label for="disabledTextInput">Kategori Penerima</label>
+        <input type="text" id="disabledTextInput" class="form-control" value= "" disabled>
+    </div>
+    <div class="form-group">
+        <label>Lokasi Vaksin</label>
+        <input type="text" id="disabledTextInput" class="form-control" value= "" disabled>
+    </div>
+    <button type="submit" class="btn btn-primary">Daftar</button>
+</form>
+{% endblock %}

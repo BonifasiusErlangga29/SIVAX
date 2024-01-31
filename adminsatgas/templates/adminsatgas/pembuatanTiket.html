@@ -1,0 +1,44 @@
+{% extends 'home/base.html' %}
+{% block page_content %}
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center;">PEMBUATAN TIKET</h2>
+
+<form action="{% url 'adminsatgas:pembuatanTiket'%}" method="POST">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="namaStatus">Kode:</label><br>
+    <input type="text" id="namaStatus" class="form-control" name="namaStatus" value="{{kode}}"><br><br>
+</div>
+    <div class="form-group">
+        <label for="namaStatus">Nama Status:</label><br>
+        <input type="text" id="namaStatus" class="form-control" name="namaStatus" value="{{nama_status}}"><br><br>
+    </div>
+    
+    <td><a href="{% url 'adminsatgas:tambahStatus' kode nama_status%}" type="button" class="btn btn-primary">Tambah</a></td>
+</form>
+{% endblock %}

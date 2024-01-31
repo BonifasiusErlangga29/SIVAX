@@ -1,0 +1,83 @@
+{% extends 'home/base.html' %}
+
+{% block page_content %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center;">DETAIL PENJADWALAN</h2>
+
+<div class="form-group">
+  <label>Nama Instansi:</label>
+  <input type="text" id="disabledTextInput" class="form-control" value= "{{ nama_instansi}}" disabled>
+</div>
+<div class="form-group">
+  <label>Tanggal dan Waktu Pelaksanaan:</label>
+  <input type="text" id="disabledTextInput" class="form-control" value= "{{ tanggal_waktu }}" disabled>
+</div>
+<div class="form-group">
+  <label>Kuota:</label>
+  <input type="text" id="disabledTextInput" class="form-control" value= "{{ kuota }}" disabled>
+</div>
+<div class="form-group">
+  <label>Kategori Penerima:</label>
+  <input type="text" id="disabledTextInput" class="form-control" value= "{{kategori_penerima}}" disabled>
+</div>
+<div class="form-group">
+  <label>Lokasi Vaksin:</label>
+  <input type="text" id="disabledTextInput" class="form-control" value= "{{nama_lokasi}}" disabled>
+</div>
+<div class="form-group">
+  <label>Status:</label>
+  <input type="text" id="disabledTextInput" class="form-control" value= "{{ status }}" disabled>
+</div>
+<div class="form-group">
+  <label>Jumlah Tenaga Kesehatan:</label>
+  <input type="text" id="disabledTextInput" class="form-control" value= "{{jumlah_nakes}}" disabled>
+</div>
+<div class="form-group">
+  <label>Diverifikasi oleh:</label>
+  <input type="text" id="disabledTextInput" class="form-control" value= "{{ email_admin }}" disabled>
+</div>
+
+<p> Informasi Distribusi: </p>
+<table>
+    <tr>
+      <th>Kode</th>
+      <th>Tanggal Distribusi</th>
+      <th>Biaya</th>
+      <th>Jenis Vaksin</th>
+      <th>Jumlah</th>
+    </tr>
+    {% if kode_distribusi != None %}
+    <tr>
+        <td>{{ kode }}</td>
+        <td>{{ tanggal_waktu }}</td>
+        <td>{{ biaya }}</td>
+        <td>{{ nama }}</td>
+        <td>{{ kuota }}</td>
+    </tr>
+    {% endif %}
+</table>
+<button type="button">Cancel</button>
+
+{% endblock %}

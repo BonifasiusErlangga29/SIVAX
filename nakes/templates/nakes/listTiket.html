@@ -1,0 +1,38 @@
+{% extends 'home/base.html' %}
+
+{% block page_content %}
+
+<h2><center>List Tiket</center></h2>
+<div class="tabelmargin table-responsive">
+    <table class="table justify-content-center">
+        <thead class="bg-success text-white align-items-center">
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Nomor Tiket</th>
+                <th scope="col">Nama Penerima Vaksin</th>
+                <th scope="col">Waktu Pelaksanaan</th>
+                <th scope="col">Status Tiket</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tiket in tikets %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ tiket.no_tiket }}</td>
+                <td>{{ tiket.nama_lengkap }}</td>
+                <td>{{ tiket.tgl_waktu }}</td>
+                <td>{{ tiket.nama_status }}</td>
+                <td>
+                    <a href="{% url 'nakes:detailTiket' tiket.no_tiket%}"  type="button" class="btn btn-primary">Detail</a>
+                    {% if tiket.nama_status != 'selesai vaksin'%}
+                    <a href="{% url 'nakes:updateTiket' tiket.no_tiket%}"  type="button" class="btn btn-primary">Ubah Status</a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

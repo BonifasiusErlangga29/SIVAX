@@ -1,0 +1,45 @@
+{% extends 'home/base.html' %}
+{% block page_content %}
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center;">FORM UPDATE STATUS TIKET</h2>
+
+<form action="{% url 'adminsatgas:updateStatusTiket' kode %}" method="POST">
+  {% csrf_token %}
+    <div class="form-group">
+      <label for = "Kode">Kode</label>
+      <input type="text" id="disabledTextInput" class="form-control" value= "{{kode}}" disabled>
+    </div>
+
+    <div class="form-group">
+        <label for="Nama Status">Nama Status</label><br>
+        {{form.nama_status}}
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+{% endblock %}

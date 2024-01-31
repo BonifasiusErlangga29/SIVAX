@@ -1,0 +1,30 @@
+{% extends 'home/base.html' %}
+
+{% block page_content %}
+
+<body>
+    <div style="margin-top: 40px;" class="outer-form container">
+        <h2><center>Selamat datang, {{ data.0 }} sebagai Tenaga Kesehatan</center></h2>
+        <div class="card">
+            <div class="card-header">
+              <ul class="nav nav-tabs card-header-tabs" >
+                  
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Tiket
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="{% url 'nakes:listTiket' %}">List Tiket</a>
+                            <!-- <a class="dropdown-item" href="{% url 'adminsatgas:updateStokVaksin' %}">Update Stok Vaksin</a> -->
+                        </div>
+                    </div>
+                </li>
+
+              </ul>
+            </div>
+    </div>
+</body>
+
+{% endblock %}
+

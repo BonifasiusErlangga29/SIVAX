@@ -1,0 +1,54 @@
+{% extends 'home/base.html' %}
+{% block page_content %}
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center;">MASTER STATUS TIKET</h2>
+
+<a href="{% url 'adminsatgas:pembuatanTiket'%}"  type="button" class="btn btn-primary">Tambah Status</button></a>
+
+<table>
+  <tr>
+    <th>No</th>
+    <th>Kode Status</th>
+    <th>Nama Status</th>
+    <th>Tindakan</th>
+  </tr>
+  {% for data in datas %}
+  <tr>
+    <td>{{forloop.counter}}</td>
+    <td>{{data.kode}}</td>
+    <td>{{data.nama_status}}</td>
+    <td><a href="{% url 'adminsatgas:updateStatusTiket' data.kode%}"  type="button" class="btn btn-primary">Edit</button>
+        <a href="{% url 'adminsatgas:hapusStatusTiket' data.kode%}"  type="button" class="btn btn-primary">Hapus</button></td>
+  </tr>
+  {% endfor %}
+
+</table>
+
+</body>
+</html>
+{% endblock %}

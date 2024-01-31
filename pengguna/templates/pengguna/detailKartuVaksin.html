@@ -1,0 +1,13 @@
+{% extends 'home/base.html' %}
+
+{% block page_content %}
+<h2 style="text-align:center;">KARTU VAKSIN</h2>
+<div style = 'text-align:center'>
+    <p> Nama: {{ nama_lengkap }}</p>
+    <p> Nomor Sertifikat: {{ no_sertifikat}}</p>
+    <p> Status Tahapan Vaksin: {{ status_tahapan }}</p>
+    <a href="{% url 'pengguna:listKartuVaksin'%}"  type="button" class="btn btn-primary">Cancel</a>
+    <a href="{% url 'pengguna:downloadKartuVaksin' no_sertifikat%}"  type="button" class="btn btn-primary">Unduh</a>
+</div>
+
+{% endblock %}

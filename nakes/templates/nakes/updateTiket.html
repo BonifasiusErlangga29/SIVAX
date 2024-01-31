@@ -1,0 +1,38 @@
+{% extends 'home/base.html' %}
+
+{% block page_content %}
+
+<form action="{% url 'nakes:updateTiket' no_tiket%}" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <label>Nama Instansi</label>
+        <input type="text" id="disabledTextInput" class="form-control" value= "{{ nama_instansi }}" disabled>
+    </div>
+    <div class="form-group">
+        <label for="disabledTextInput">Tanggal dan Waktu Pelaksanaan</label>
+        <input type="text" id="disabledTextInput" class="form-control" value= "{{ tgl_waktu }}" disabled>
+    </div>
+    <div class="form-group">
+        <label> Kuota</label>
+        <input type="text" id="disabledTextInput" class="form-control" value= "{{ jumlah }}" disabled>
+    </div>
+    <div class="form-group">
+        <label for="disabledTextInput">Kategori Penerima</label>
+        <input type="text" id="disabledTextInput" class="form-control" value= "{{kategori_penerima}}" disabled>
+    </div>
+    <div class="form-group">
+        <label for="disabledTextInput">Lokasi Vaksin</label>
+        <input type="text" id="disabledTextInput" class="form-control" value= "{{lokasi_vaksin}}" disabled>
+    </div>
+    <div class="form-group">
+        <label for="disabledTextInput">Nomor Tiket</label>
+        <input type="text" id="disabledTextInput" class="form-control" value= "{{no_tiket}}" disabled>
+    </div>
+    <div class="form-group">
+        <label>Status Tiket</label>
+        {{ form.statusTiket }}
+    </div>
+    <button type="submit" class="btn btn-primary">Simpan</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'home/base.html' %}
+{% block page_content %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>Daftar Vaksin</h2>
+
+<table>
+  <tr>
+    <th>Kode</th>
+    <th>Nama</th>
+    <th>Produsen</th>
+    <th>No. Edar</th>
+    <th>Freq. Suntikan</th>
+    <th>Stok</th>
+    <th>Action</th>
+  </tr>
+  {% for i in vaks %}
+    <tr>
+        <td>{{ i.kode}}</td>
+        <td>{{ i.nama }}</td>
+        <td>{{ i.nama_produsen }}</td>
+        <td>{{ i.no_edar }}</td>
+        <td>{{ i.freq_suntik }}</td>
+        <td>{{ i.stok }}</td>
+
+        <td> <a href=""  type="button" class="btn btn-primary">Delete</a> 
+          <a href="{% url 'adminsatgas:updateStokVaksin' i.kode %}"  type="button" class="btn btn-primary">Update Stok</a> </td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'home/base.html'%}
+
+{% block page_content %}
+
+
+    <h1>Detail Distribusi</h1>
+
+    {% csrf_token %}
+    <h2>Informasi Penjadwalan:</h2>
+    <div class="form-group">
+        <label>Nama Instansi:</label>
+        <input type="text" id="disabledTextInput" class="form-control" value= "Rumah Sakit Pertama" disabled>
+    </div>
+    <div class="form-group">
+        <label>Tanggal dan Waktu Pelaksanaan:</label>
+        <input type="text" id="disabledTextInput" class="form-control" value= "18 Mei 2021 3:40" disabled>
+    </div>
+    <div class="form-group">
+        <label>Kuota:</label>
+        <input type="text" id="disabledTextInput" class="form-control" value= "931" disabled>
+    </div>
+    <div class="form-group">
+        <label>Kategori Penerima:</label>
+        <input type="text" id="disabledTextInput" class="form-control" value= "umum" disabled>
+    </div>
+    <div class="form-group">
+        <label>Lokasi Vaksin:</label>
+        <input type="text" id="disabledTextInput" class="form-control" value= "Memorial Medical Center" disabled>
+    </div>
+    <div class="form-group">
+        <label>Jumlah Tenaga Kesehatan:</label>
+        <input type="text" id="disabledTextInput" class="form-control" value= "4" disabled>
+    </div>
+    <div class="form-group">
+        <label>Diverifikasi oleh:</label>
+        <input type="text" id="disabledTextInput" class="form-control" value= "Waylin.Wickendon@gmail.com" disabled>
+    </div>
+    <h2>Informasi Distribusi:</h2>
+    <div class="form-group">
+        <label>Kode:</label>
+        <input type="text" id="disabledTextInput" class="form-control" value= "dst1" disabled>
+    </div>
+    <div class="form-group">
+        <label>Tanggal Distribusi:</label>
+        <input type="text" id="disabledTextInput" class="form-control" value= "18 September 2021" disabled>
+    </div>
+    <div class="form-group">
+        <label>Biaya Distribusi:</label>
+        <input type="text" id="disabledTextInput" class="form-control" value= "10000" disabled>
+    </div>
+    <div class="form-group">
+        <label>Jenis Vaksin:</label>
+        <input type="text" id="disabledTextInput" class="form-control" value= "Sinovac" disabled>
+    </div>
+    <div class="form-group">
+        <label>Jumlah Vaksin:</label>
+        <input type="text" id="disabledTextInput" class="form-control" value= "651" disabled>
+    </div>
+
+    <button type="submit" class="btn btn-primary">EDIT DISTRIBUSI</button>
+    <button type="submit" class="btn btn-primary">HAPUS DISTRIBUSI</button>
+
+{% endblock %}

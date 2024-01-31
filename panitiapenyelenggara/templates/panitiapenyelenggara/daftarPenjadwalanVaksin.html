@@ -1,0 +1,62 @@
+{% extends 'home/base.html' %}
+{% block page_content %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>Daftar Penjadwalan Vaksin</h2>
+
+<a href="{% url 'panitiapenyelenggara:tambahPenjadwalanBaru'%}"  type="button" class="btn btn-primary">Tambah Penjadwalan</a>
+<table>
+  <tr>
+    <th>No</th>
+    <th>Instansi</th>
+    <th>Waktu Pelaksanaan</th>
+    <th>Kuota</th>
+    <th>Status</th>
+    <th>Kode Distribusi</th>
+    <th>Action</th>
+  </tr>
+  <body>
+    {% for i in p %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ i.nama_instansi}}</td>
+        <td>{{ i.tanggal_waktu }}</td>
+        <td>{{ i.jumlah }}</td>
+        <td>{{ i.status }}</td>
+        <td>{{ i.kode_distribusi }}</td>
+        <td>
+            <a href="{% url 'panitiapenyelenggara:detailPenjadwalan' i.nama_instansi i.kode_distribusi%}"  type="button" class="btn btn-primary">Detail</a>
+            {% if i.status != 'pengajuan disetujui'%}
+            <a href="{% url 'panitiapenyelenggara:updatePenjadwalan'%}"  type="button" class="btn btn-primary">Update</a>
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+  </body>
+ 
+</table>
+
+</body>
+</html>
+{% endblock %}

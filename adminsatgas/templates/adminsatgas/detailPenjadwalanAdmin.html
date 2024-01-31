@@ -1,0 +1,66 @@
+{% extends 'home/base.html' %}
+
+{% block page_content %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center;">DETAIL PENJADWALAN</h2>
+
+<div class="form-group">
+  <label>Nama Instansi:</label>
+  <input type="text" id="disabledTextInput" class="form-control" value= "Rumah Sakit Sehat" disabled>
+</div>
+<div class="form-group">
+  <label>Tanggal dan Waktu Pelaksanaan:</label>
+  <input type="text" id="disabledTextInput" class="form-control" value= "18 Juni 2021 13:38" disabled>
+</div>
+<div class="form-group">
+  <label>Kuota:</label>
+  <input type="text" id="disabledTextInput" class="form-control" value= "651" disabled>
+</div>
+<div class="form-group">
+  <label>Kategori Penerima:</label>
+  <input type="text" id="disabledTextInput" class="form-control" value= "umum" disabled>
+</div>
+<div class="form-group">
+  <label>Lokasi Vaksin:</label>
+  <input type="text" id="disabledTextInput" class="form-control" value= "Rosemary Hospital Center" disabled>
+</div>
+<div class="form-group">
+  <label>Status:</label>
+  <input type="text" id="disabledTextInput" class="form-control" value= "Pengajuan Dikirim" disabled>
+</div>
+<div class="form-group">
+  <label>Jumlah Tenaga Kesehatan:</label>
+  <input type="text" id="disabledTextInput" class="form-control" value= "1" disabled>
+</div>
+<div class="form-group">
+  <label>Diverifikasi oleh:</label>
+  <input type="text" id="disabledTextInput" class="form-control" value= "Sharyl.Pelosi@gmail.com" disabled>
+</div>
+
+<button type="button">Atur Distribusi</button>
+<button type="button">Cancel</button>
+
+{% endblock %}

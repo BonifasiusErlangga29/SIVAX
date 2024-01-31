@@ -1,0 +1,28 @@
+{% extends 'home/base.html' %}
+{% block page_content %}
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2 style="text-align:center;">TAMBAH VAKSIN</h2>
+
+<p>code:{{kode}}</p>
+<form method="POST" action="/adminsatgas/tambahVaksin">
+  {%csrf_token%}
+  <input type="hidden" id="kode" name="kode" value="{{ kode }}">
+  <label for="nama">Nama Vaksin:</label><br>
+  <input type="text" id="nama" name="nama"><br><br>
+  <label for="produsen">Produsen:</label><br>
+  <input type="text" id="nama_produsen" name="nama_produsen"><br><br>
+  <label for="noEdar">No. Edar:</label><br>
+  <input type="text" id="no_edar" name="no_edar"><br><br>
+  <label for="stok">Stok:</label><br>
+  <input type="text" id="stok" name="stok"><br><br>
+  <label for="frekuensi">Frekuensi:</label><br>
+  <input type="text" id="freq_suntik" name="freq_suntik"><br><br>
+  <input type="submit" value="TAMBAH">
+</form> 
+
+</body>
+</html>
+{% endblock %}

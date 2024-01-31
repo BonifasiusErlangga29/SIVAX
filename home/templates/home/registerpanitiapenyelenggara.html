@@ -1,0 +1,104 @@
+{% extends 'home/base.html'%}
+
+{% block page_content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'hilang.css' %}">
+
+<form action="{% url 'home:registerPanitiaPenyelenggara' %}" method="POST">
+    {% csrf_token %}
+    
+    <center><h1>Register Panitia Penyelenggara</h1></center>
+    <p><strong>Informasi Akun :</strong></p>
+    <div class="mb-3">
+      <label>Email</label>
+        {{ form.email }}
+    </div>
+    {% if messages %}
+    {% for message in messages %}
+    <p{% if message.tags %} class="{{ message.tags }} text-danger"{% endif %}>{{ message }}</p>
+    {% endfor %}
+    {% endif %}
+    <div class="mb-3">
+      <label>Password</label>
+        {{ form.password }}
+    </div>
+    <div class="mb-3">
+        <label>No. HP</label>
+          {{ form.noHp }}
+    </div>
+    <p><strong>Informasi Panitia :</strong></p>
+    <div class="mb-3">
+        <label>Nama Panjang</label>
+            {{ form.namaPanjang }}
+        </div>
+    <div class="mb-3" id = "ngumpet">
+        <label>Tenaga Kesehatan</label>
+        <div id = "yesno">  {{ form.isTenagaKesehatan}}</div>
+        
+        <div class= "option">
+            <label>Nomor Surat Tanda Registrasi (STR)</label>
+            {{ form.nomorSTR}}
+            <label>Tipe Petugas</label>
+            {{ form.tipePetugas}}
+        </div>
+    </div>
+    <p><strong>Data Personal :</strong></p>
+    <div class="mb-3">
+        <label>NIK</label>
+          {{ form.nik }}
+    </div>
+    <div class="mb-3">
+        <label>Jenis Kelamin</label>
+        {{ form.jenisKelamin }}
+    </div>
+    <p><strong>Alamat :</strong></p>
+    <div class="mb-3">
+    <label>Nomor Bangunan</label>
+        {{ form.nomorBangunan }}
+    </div>
+    <div class="mb-3">
+    <label>Nama Jalan</label>
+        {{ form.namajalan }}
+    </div>
+    <div class="mb-3">
+        <label>Kelurahan</label>
+        {{ form.kelurahan }}
+    </div>
+    <div class="mb-3">
+    <label>Kecamatan </label>
+        {{ form.kecamatan}}
+    </div>
+    <div class="mb-3">
+        <label>Kabupaten/ Kota Administrasi</label>
+        {{ form.kotaAdministrasi }}
+    </div>
+    <p><strong>Afiliasi :</strong></p>
+    <div class="mb-3">
+        <label>Instansi</label>
+        {{ form.instansi }}
+    </div>
+    <button type="submit" class="btn btn-primary">REGISTER</button>
+  </form>
+
+{% endblock %}
+
+{% block script_content %}
+
+<script>
+    $(document).ready(function () {
+        if ($('#yesno') = "no"){
+            $('#option').css('display', 'none');
+        }
+    });
+</script>
+
+{% endblock %}
+
+
+{% block js %}
+
+{% if not user.is_authenticated %}
+<script src="{% static 'js/auth.js' %}"></script>
+{% endif %}
+
+{% endblock js %}

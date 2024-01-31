@@ -1,0 +1,30 @@
+{% extends 'home/base.html' %}
+
+{% block page_content %}
+<h2><center>Kartu Vaksin Saya</center></h2>
+<div class="tabelmargin table-responsive">
+    <table class="table justify-content-center">
+        <thead class="bg-success text-white align-items-center">
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Nomor Sertifikat</th>
+                <th scope="col">Tahapan</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for kartu in kartus %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ kartu.no_sertifikat}}</td>
+                <td>{{ kartu.status_tahapan }}</td>
+                <td>
+                    <a href="{% url 'pengguna:detailKartuVaksin' kartu.no_sertifikat%}"  type="button" class="btn btn-primary">Detail</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

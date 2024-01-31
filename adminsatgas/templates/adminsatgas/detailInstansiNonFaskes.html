@@ -1,0 +1,20 @@
+{% extends 'home/base.html' %}
+{% block page_content %}
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h2 style="text-align:center;">FORM DETAIL INSTANSI</h2>
+
+<p> Kode: D001</p>
+<p> Nama Instansi: PT Sosru</p>
+<p> Nomor Telepon: 08987654321</p>
+<p> Kategori Instansi: Non Faskes</p>
+<p> Kategori Non-Faskes: Swasta</p>
+<a href="{% url 'adminsatgas:masterInstansi'%}"  type="button" class="btn btn-primary">Cancel</a>
+
+
+</body>
+</html>
+{% endblock %}

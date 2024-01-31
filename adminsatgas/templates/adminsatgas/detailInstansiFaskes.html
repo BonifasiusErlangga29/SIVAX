@@ -1,0 +1,21 @@
+{% extends 'home/base.html' %}
+{% block page_content %}
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h2 style="text-align:center;">FORM DETAIL INSTANSI</h2>
+
+<p> Kode: {{ kode_instansi }}</p>
+<p> Nama Instansi: {{ nama_instansi }}</p>
+<p> Nomor Telepon: 08123456789</p>
+<p> Kategori Instansi: Faskes</p>
+<p> Tipe Faskes: {{ tipe }}</p>
+<p> Status Kepemilikan: {{ statuskepemilikan }}</p>
+<a href="{% url 'adminsatgas:masterInstansi'%}"  type="button" class="btn btn-primary">Cancel</a>
+
+
+</body>
+</html>
+{% endblock %}

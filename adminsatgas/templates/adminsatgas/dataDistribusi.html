@@ -1,0 +1,53 @@
+{% extends 'home/base.html' %}
+{% block page_content %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>Data Distribusi</h2>
+
+<table>
+  <tr>
+    <th>Kode</th>
+    <th>Tanggal Distribusi</th>
+    <th>Biaya</th>
+    <th>Jenis Vaksin</th>
+    <th>Jumlah</th>
+    <th>Action</th>
+  </tr>
+  <tr>
+    {% for i in disb %}
+    <td>{{i.kode}}</td>
+    <td>{{i.tanggal}}</td>
+    <td>{{i.biaya}}</td>
+    <td>{{i.nama}}</td>
+    <td>{{i.jumlah_vaksin}}</td>
+    <td><a href=""  type="button" class="btn btn-primary">Detail</a>
+        <button type="submit" class="btn btn-primary">Delete</button>
+        <a href=""  type="button" class="btn btn-primary">Update</a></td>
+  </tr>
+  {% endfor %}
+</table>
+
+</body>
+</html>
+{% endblock %}

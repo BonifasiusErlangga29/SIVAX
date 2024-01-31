@@ -1,0 +1,23 @@
+{% extends 'home/base.html'%}
+
+{% block page_content %}
+
+<form action="{% url 'home:login' %}" method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label>Email</label>
+        {{ form.email }}
+    </div>
+    <div class="mb-3">
+      <label>Password</label>
+        {{ form.password }}
+    </div>
+    {% if messages %}
+    {% for message in messages %}
+    <p{% if message.tags %} class="{{ message.tags }} text-danger"{% endif %}>{{ message }}</p>
+    {% endfor %}
+    {% endif %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+{% endblock %}
